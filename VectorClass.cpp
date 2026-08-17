@@ -21,6 +21,7 @@ public:
         num++;
     }
 
+
     int getElement(int position)
     {
         assert(position < num); // This is an INVARIANT
@@ -63,6 +64,24 @@ public:
         assert(index < num);
         return data[index];
     }
+
+    // Homework 3 
+
+    IlariaVector() {};
+     
+  // Copy Constructor
+   IlariaVector(IlariaVector& v) {
+        int* box = new int[v.num];
+        for (int i = 0; i < v.num; i++)
+        {
+            box[i] = v.data[i];      
+        }
+
+        data = box;
+        num = v.num;
+    }
+
+
 };
 
 int main()
@@ -83,4 +102,16 @@ int main()
     std::cout << "Replace element at index 0 by overloading [] and print result \n";
     v[0] = 55;
     std::cout << v[0] << std::endl;
-
+    
+    std::cout << "Testing scenarios for Homework 3: \n";
+    std::cout << "Replacing 2 elements in V2, then printing element at index 1, expected 99 \n";
+    IlariaVector v2 = v;
+    v2.replace(0, 77);
+    v2.addElement(99);
+    std::cout << v2[1] << std::endl;
+    std::cout << "Printing size of v, expected 1 \n";
+    std::cout << v.size() << std::endl;
+    std::cout << "Printing element at index 0 in v, expected 55 \n";
+    std::cout << v[0] << std::endl;
+    std::cout << "Printing element at index 0 in v2, expected 77 \n ";
+    std::cout << v2[0];
