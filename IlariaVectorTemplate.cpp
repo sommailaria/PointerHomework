@@ -158,7 +158,7 @@ int main()
     std::cout << words[0] << std::endl;    
     IlariaVector<std::string> colors = words;
     colors[0] = "violet";
-    std::cout << "words[0] is " << words[0] << "and colors[0] is " << colors[0] << std::endl;
+    std::cout << "words[0] is " << words[0] << " and colors[0] is " << colors[0] << std::endl;
     // Testing = operator
     IlariaVector<std::string> strings;
     strings = words;
