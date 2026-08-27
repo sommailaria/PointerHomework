@@ -159,10 +159,18 @@ int main()
     IlariaVector<std::string> colors = words;
     colors[0] = "violet";
     std::cout << "words[0] is " << words[0] << " and colors[0] is " << colors[0] << std::endl;
-    // Testing = operator
-    IlariaVector<std::string> strings;
-    strings = words;
-    std::cout << "strings[0]:" << strings[0] << "words[0]: " << words[0] << std::endl;
+    
+    std::cout << "Testing = operator \n";
+    IlariaVector<std::string> greetings;
+    greetings.addElement("hello");
+    greetings.addElement("ciao");
+    greetings.addElement("Arrivederci");
+    std::cout << greetings[0] << '\n' <<  greetings[1] << '\n' <<  greetings[2] << std::endl;
+    greetings = words;
+   std::cout << "greetings[0]: " << greetings[0] << '\n' << "words[0]: " << words[0] << std::endl;
+    // Testing self-assignment 
+    words = words;
+    std::cout << "words[0] after self-assignment: " << words[0] << std::endl;
  
     return 0;
 
